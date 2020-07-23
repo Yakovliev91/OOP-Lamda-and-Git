@@ -114,6 +114,28 @@ public:
 		}
 	}
 
+
+	void SearchByYear(vector<Auto> &c) {
+		cout << "Search by year of car" << endl;
+		if (c.empty())
+		{
+			cout << "No cars" << endl;
+		}
+		int year;
+		cout << "Enter searching year :" << endl;
+		cin >> year;
+		bool isFound = false;
+		for (vector<Auto>::iterator it = c.begin(); it != c.end(); ++it) {
+			if (it->GetYear() == year)
+			{
+				cout << it->GetName() << endl;
+				cout << it->GetVolume() << endl;
+				cout << it->GetPrice() << endl;
+
+			}
+		}
+	}
+
 };
 
 int main() {
@@ -125,6 +147,7 @@ int main() {
 	car.SortingByPrice(c);
 	car.SortingByVolume(c);
 	car.SortingByYear(c);
+	car.SearchByYear(c);
 	system("pause");
 	return 0;
 }
