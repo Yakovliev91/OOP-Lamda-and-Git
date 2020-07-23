@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<algorithm>
 using namespace std;
 
 
@@ -78,6 +79,41 @@ public:
 		}
 		it++;
 	}
+
+
+	void SortingByName(vector<Auto> &c) {
+		cout << "Sorting by name car" << endl;
+		sort(&c.begin(), &c.end());
+		for (vector<Auto>::iterator it = c.begin(); it != c.end(); ++it) {
+			cout << it->GetName();
+		}
+	}
+
+	void SortingByYear(vector<Auto> &c) {
+		cout << "Sorting by year of car manufacture" << endl;
+		sort(&c.begin(), &c.end());
+		for (vector<Auto>::iterator it = c.begin(); it != c.end(); ++it) {
+			cout << it->GetYear();
+		}
+	}
+
+
+	void SortingByVolume(vector<Auto> &c) {
+		cout << "Sorting by volume of engine" << endl;
+		sort(&c.begin(), &c.end());
+		for (vector<Auto>::iterator it = c.begin(); it != c.end(); ++it) {
+			cout << it->GetVolume();
+		}
+	}
+
+	void SortingByPrice(vector<Auto> &c) {
+		cout << "Sorting by price of car" << endl;
+		sort(&c.begin(), &c.end());
+		for (vector<Auto>::iterator it = c.begin(); it != c.end(); ++it) {
+			cout << it->GetPrice();
+		}
+	}
+
 };
 
 int main() {
@@ -85,7 +121,10 @@ int main() {
 	vector<Auto>c;
 	car.AddInfo(c);
 	car.ShowCars(c);
-
+	car.SortingByName(c);
+	car.SortingByPrice(c);
+	car.SortingByVolume(c);
+	car.SortingByYear(c);
 	system("pause");
 	return 0;
 }
